@@ -1,0 +1,15 @@
+#you will type question name lexi string on google you will find full questions
+Solutions :
+from collections import defaultdict
+t=int(input())
+for i in range(t):
+    s1=input()
+    s2=input()
+    s=set()
+    arr=[]
+    for i in range(len(s2)):
+        s.add(s2[i])
+    for i in range(len(s1)):
+        if (s1[i] in s):
+            arr.append(s1[i])
+    print("".join(arr))        
