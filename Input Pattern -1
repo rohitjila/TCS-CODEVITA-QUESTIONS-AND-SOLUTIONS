@@ -1,0 +1,30 @@
+Input decimals
+Write a program that takes as input decimals and prints the decimals.
+
+Input Format
+The first line contains N, the number of test cases.
+
+The N lines after that contain the decimals that you need to print.
+
+Output Format
+Print each decimal in a single line
+
+Sample Input / Output
+Input
+3
+2.5
+3.99
+145.678
+
+Output
+2.5
+3.99
+145.678
+
+Solutions : 
+n=int(input())
+arr=[]
+for i in range(n):
+    arr.append(float(input()))
+for i in range(n):
+    print(arr[i])
