@@ -1,0 +1,29 @@
+t=int(input())
+for i in range(t):
+    n,m=map(str,input().split())
+    n=int(n)
+    for i in range(n):
+        for j in range(n): 
+            if (m  == "W"):
+                if (i % 2 == 0):
+                    if (j % 2 == 0):
+                        print("W",end="")
+                    else:
+                        print("B",end="")
+                elif (i % 2 != 0):
+                    if(j % 2 == 0):
+                        print("B",end="")
+                    else:
+                        print("W",end="")
+            elif (m == "B"):
+                if (i % 2 == 0):
+                    if (j % 2 == 0):
+                        print("B",end="")
+                    else:
+                        print("W",end="")
+                elif (i % 2 != 0):
+                    if(j % 2 == 0):
+                        print("W",end="")
+                    else:
+                        print("B",end="")
+        print()
