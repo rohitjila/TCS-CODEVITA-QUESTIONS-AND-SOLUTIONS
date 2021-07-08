@@ -1,0 +1,22 @@
+# when we want sum of n then we can get before mid or equal to mid
+t=int(input())
+for i in range(t):
+    n=int(input())
+    count=0
+    while(n > 0):
+        n=n//2
+        count+=1
+    print(count)
+
+#Function to convert decimal to binary
+def decimalToBinary(n):
+    return (len(bin(n).replace("0b","")))
+t=int(input())
+for i in range(t):
+    n=int(input())
+    print(decimalToBinary(n))
+ 
+#Function to convert binary to decimal   
+# def binaryToDecimal(n):
+#     return int(n,2)
+ 
