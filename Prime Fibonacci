@@ -1,0 +1,32 @@
+from math import sqrt
+def prime(n):
+    if n <= 1:
+        return False
+    for i in range(2,n):
+        if n % i == 0:
+            return False
+    return True
+def find_prime(n1,n2):
+    arr=[]
+    arr1=[]
+    for i in range(n1,n2+1):
+        if(prime(i)):
+            arr.append(i)
+            
+    for i in arr:
+        for j in arr:
+            prod=int(str(i)+str(j))
+            if(prime(prod)) and prod not in arr1:
+                arr1.append(prod)
+    first=min(arr1)
+    second=max(arr1)
+    l=len(arr1)
+    for i in range(l-2):
+        res=first+second
+        first=second
+        second=res
+    return res
+t=int(input())
+for i in range(t):
+    n1,n2=map(int,input().split())
+    print(find_prime(n1,n2))
