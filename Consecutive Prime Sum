@@ -1,0 +1,35 @@
+def generatePrime(n):
+    arr=[]
+    prime=[True for i in range(n+1)]
+    p=2
+    while(p*p <= n):
+        if (prime[p] == True):
+            for i in range(p*2,n+1,p):
+                prime[i]=False
+        p+=1
+        
+    prime[0]=False
+    prime[1]=False
+    
+    for i in range(n+1):
+        if(prime[i]):
+            arr.append(i)
+    return arr
+def solve(n):
+    res=generatePrime(n)
+    count=0
+    for i in range(2,len(res)):
+        Sum=0
+        for j in res:
+            Sum+=j
+            if (Sum == res[i]):
+                count+=1
+                break
+            if (Sum > res[i]):
+                break
+    print(count)
+    
+t=int(input())
+for i in range(t):
+    n=int(input())
+    solve(n)
