@@ -1,0 +1,20 @@
+from heapq import heapify,heappop,heappush
+def array(arr,n):
+    min_heap=[]
+    for i in range(n):
+        heappush(min_heap,arr[i])
+    Sum=0
+    while(len(min_heap) >= 2):
+        first=heappop(min_heap)
+        second=heappop(min_heap)
+        res=first+second
+        Sum+=(first+second)
+        heappush(min_heap,res)
+    return Sum
+    
+t=int(input())
+for i in range(t):
+    n=int(input())
+    arr=list(map(int,input().split()))
+    print(array(arr,n))
+
