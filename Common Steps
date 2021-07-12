@@ -1,0 +1,12 @@
+#for this time complexity is 3^n
+#So for this question must use Dp by this you can reduce the time complexity to O(n)
+def find_ways(n):
+    if n == 0 or n == 1:
+        return 1
+    elif (n == 2):
+        return 2
+    else:
+        return find_ways(n-3)+find_ways(n-2)+find_ways(n-1)
+        
+n=int(input())
+print(find_ways(n))
