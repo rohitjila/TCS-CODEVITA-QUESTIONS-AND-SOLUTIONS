@@ -1,0 +1,26 @@
+# Dearrangement of Permutations and Combinations
+def D(n):
+    if n == 0 or n == 2:
+        return 1
+        
+    elif n == 1:
+        return 0
+        
+    else:
+        return (n-1)*(D(n-1)+D(n-2))
+        
+n=int(input())
+print(D(n)%1000000007)
+
+
+def Counter(n):
+    D=[0 for i in range(n+1)]
+    D[0]=1
+    D[1]=0
+    D[2]=1
+    
+    for i in range(3,n+1):
+        D[i]=(i-1)*(D[i-1]+D[i-2])
+    return (D[n]%1000000007)
+n=int(input())
+print(Counter(n))
