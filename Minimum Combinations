@@ -1,0 +1,12 @@
+def gcd(a,b):
+    if b == 0:
+        return a
+        
+    else:
+        return gcd(b,a%b)
+
+t=int(input())
+for i in range(t):
+    n1,n2=map(int,input().split())
+    print(gcd(n1,n2))
+    
