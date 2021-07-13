@@ -1,0 +1,9 @@
+n=int(input())
+s=input()
+q=int(input())
+res=[]
+for i in range(q):
+    p=int(input())
+    res.append(s[:p-1].count(s[p-1]))
+for i in range(len(res)):
+    print(res[i])
