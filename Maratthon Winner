@@ -1,0 +1,29 @@
+from collections import Counter
+n=int(input())
+t=int(input())
+participant=[]
+list1=[]
+list2=[]
+for i in range(n):
+    k=list(map(int,input().split())
+    S=0
+    dis=k.pop()
+    b=[]
+    for i in k:
+        r=i*dis
+        S+=r
+        b.append(i)
+    list1.append(b)
+for i in range(t):
+    list2.append(list(list(zip(*list1)[i])))
+for i in range(1,len(list1),2):
+    m=max(list2[i])
+    for j in range(len(list2[i])):
+        if m == list2[i][j]:
+            participant.append(j+1)
+            
+res=dict(Counter(participant))
+value=list(res.values())
+keys=list(res.keys())
+keys.sort()
+print(keys[value.index(max(value))])
