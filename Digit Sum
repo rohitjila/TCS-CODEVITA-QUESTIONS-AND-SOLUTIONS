@@ -1,0 +1,53 @@
+def large(num):
+    num_str=str(num)
+    i=9
+    while(i >= 0):
+        if (str(i) in num_str):
+            return i
+        i-=1
+        
+def small(num):
+    num_str=str(num)
+    i=0
+    while(i <= 9):
+        if (str(i) in num_str):
+            return i
+        i+=1
+        
+def pair_sum(num):
+    if num == 2:
+        return 1
+    if (num >= 3):
+        return 2
+    return 0
+        
+def array(arr,n):
+    bits_score=[]
+    for i in range(len(arr)):
+        l=large(arr[i])
+        s=small(arr[i])
+        score=str(11*l+7*s)
+        if (len(score) > 2):
+            score=score[-2:]
+        bits_score.append(score)
+    odd=[0]*10
+    even=[0]*10
+    for i in range(len(bits_score)):
+        index=int(bits_score[i][0])
+        if (i % 2 == 0):
+            even[index]+=1
+        else:
+            odd[index]+=1
+    count=[0]*10
+    for i in range(10):
+        if even[i] <= 1 and odd[i] <= 1:
+            continue
+        count[i]+=pair_sum(even[i]) + pair_sum(odd[i])
+        count[i]=min(2,count[i])
+    print(sum(count))
+n=8
+arr=[234, 567, 321 , 345 , 123 , 110, 767 ,111]
+array(arr,n)
+    
+    
+        
