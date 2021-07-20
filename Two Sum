@@ -1,0 +1,14 @@
+class Solution:
+    def twoSum(self, arr: List[int], target: int) -> List[int]:
+        n=len(arr)
+        hash_map={}
+        arr1=[]
+        for i in range(n):
+            if (target - arr[i] not in hash_map):
+                hash_map[arr[i]]=i
+            else:
+                arr1.append(i)
+                res=target-arr[i]
+                arr1.append(hash_map[res])
+        return arr1
+        
