@@ -1,0 +1,41 @@
+n=int(input())
+trades=[]
+buy={}
+sell={}
+trans={}
+for i in range(n):
+    tid,ttype,company,price,quantity=input.split()
+    d={}
+    d['id']=int(tid)
+    d['type']=ttype
+    d['company']=int(company)
+    d['price']=float(price)
+    d['quantity']=int(quantity)
+    trades.append(d)
+    
+for t in trades:
+    if t['type'] == 'Sell':
+        if t['company'] in sell:
+            sell[t['company']].append([[t['price']]])
+        else:
+            sell[t['company']]=[[t['price']]]
+    else:
+        if t['company'] in buy:
+            buy[t['company']].append([[t['price']]])
+        else:
+            buy[t['company']]=[[t['price']]]
+            
+            
+for b in buy.keys():
+    for j in buy[b]:
+        if b in sell.keys():
+            for i in sell[b]:
+                cost=j[0]
+                price=i[0]
+                if (price <= cost):
+                    trans[b]=price
+if trans:
+    for i in trans.keys():
+        print(i + ":" + str(int(trans[i])))
+else:
+    print("Stocks not traded")
