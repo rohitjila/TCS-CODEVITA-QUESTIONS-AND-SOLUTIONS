@@ -1,0 +1,11 @@
+n=int(input())
+arr=[]
+count=1
+for i in range(n):
+    at,dp=map(int,input().split())
+    arr.append((at,at+dp))
+    arr.sort()
+for i in range(n-1):
+    if (arr[i][1] >= arr[i+1][0]):
+        count+=1
+print(count)
